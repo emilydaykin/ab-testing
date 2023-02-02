@@ -31,4 +31,4 @@ Implement the following logic while keeping the broader goal in mind:
 - [Link](https://ab-testing-blinkist-edaykin.vercel.app/)
 - To play around with the logic, open the developer tools
   - Use the Console tab to view the API logs whenever the page is visited or revisited (refreshed), or the sign up button is clicked
-  - Use the Application tab > Storage > Local Storage to see what gets saved to Local Storage. To simulate visiting the page as a new/different user, clear the local storage (delete all entries).
+  - Use the Application tab > Storage > Local Storage to see what gets saved to Local Storage. To simulate visiting the page as a new/different user, clear the local storage (delete all entries) then refresh the page.
