@@ -1,0 +1,112 @@
+.testB {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #eeeeee, #fbfadc);
+
+
+  &__contents {
+    border-radius: .5rem;
+    margin: 4rem;
+    padding: 3rem 4.5rem;
+    background-color: #fff;
+    box-shadow: 5px 5px 17px 9px #dfdfdf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  &__video-wrapper {
+    position: relative;
+  }
+
+  &__video-quote {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    left: 39%;
+    top: 20%;
+    transform: translate(-50%, -10%);
+    background-image: linear-gradient(90deg, #9c78e1, #1fd4fc);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 4rem;
+    font-style: italic;
+  }
+
+  &__video {
+    height: 25rem;
+    width: 45rem;
+    background-image: url('https://images.unsplash.com/photo-1625463006115-09f08489f591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+    background-position: center center;
+    opacity: .3;
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+
+  &__text {
+    text-align: center;
+    margin: .5rem 0;
+    font-size: 1.7rem;
+
+    &:first-of-type,
+    &:last-of-type {
+      margin-top: 2rem;
+    }
+
+    span {
+      font-weight: 600;
+    }
+
+    &--cta {
+      font-weight: 500;
+    }
+  }
+
+  &__button {
+    border: 3px solid #2CE080;
+    background-color: #2CE080;
+    border-radius: 1rem;
+    color: #fff;
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    transition: all .1s ease-in-out;
+    
+    &:hover {
+      cursor: pointer;
+      color: #2CE080;
+      background-color: #fff;
+    }
+
+    &:active {
+      transform: scale(.95);
+    }
+  }
+
+  &__quote {
+    max-width: 65rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 100;
+    font-size: 2.25rem;
+    background-image: linear-gradient(90deg, #9c78e1, #1fd4fc);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-style: italic;
+  }
+}
