@@ -1,38 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# A/B Testing Challenge
 
-## Getting Started
+## Acceptance Criteria
 
-First, run the development server:
+Implement the following logic while keeping the broader goal in mind:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. A visitor sees only one variation (assigned randomly) when they land on the page.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. The assigned variation doesn’t change after page reload.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3. Track a pageview via the `analytics-api.js` methods when a visitor lands on the page.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+4. Track an event via the `analytics-api.js` methods when a visitor clicks on the “Sign up” button.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+5. Every single pageview and click is tracked.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+6. We want to determine a winning variation by comparing CTR (click-through rate) of clicks on the “Sign up” button. The CTR of a page is "number of clicks" divided by "number of page views". As a user can only effectively convert (sign up) once, the counts for the CTR computation need to be unique per user. This means a single user clicking ten times and reloading the page 5 times should only count towards one conversion. Make sure this is possible with the data you send and explain on a high level how.
 
-## Learn More
+## Delivery
+### A/B Design:
+<p align="center">
+  <img src="public/A_design.png" width="49.85%"  />
+  <img src="public/B_design.png" width="46.5%"  />
+</p>
 
-To learn more about Next.js, take a look at the following resources:
+### Implementation:
+- NextJS, Sass (BEM), and Vercel were used to create, style and host this application.
+- `localStorage`, `uuidv4` were used to differentiate between visitors, site versions, and track events (page view and sign-up click).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Deployed application:
+- [Link](https://ab-testing-blinkist-edaykin.vercel.app/)
+- To play around with the logic, open the developer tools
+  - Use the Console tab to view the API logs whenever the page is visited or revisited (refreshed), or the sign up button is clicked
+  - Use the Application tab > Storage > Local Storage to see what gets saved to Local Storage. To simulate visiting the page as a new/different user, clear the local storage (delete all entries).
